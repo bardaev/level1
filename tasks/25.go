@@ -19,6 +19,9 @@ func Task25() {
 	PrintInputOutput(25.3, strconv.FormatInt(dur3, 10)+" seconds", "Start: "+strconv.FormatInt(start3, 10)+", end: "+strconv.FormatInt(end3, 10))
 }
 
+// Для реализации time.Sleep берем текущее время и добавляем количество секунд, которое будет означать конец функции sleep
+// в бесконечном цикле проверяем текущее время и сравниваем с переменной end
+// когда время будет равно с конечным завершаем функцию
 func sleep(duration int64) (int64, int64) {
 	var start int64 = time.Now().Unix()
 	var end int64 = time.Now().Unix() + duration

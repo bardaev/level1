@@ -7,6 +7,7 @@ import (
 
 func PrintResult(name int, result interface{}) {
 	fmt.Println("Task " + strconv.Itoa(name))
+	fmt.Print("output data: ")
 	fmt.Println(result)
 
 	EndOfTask()
