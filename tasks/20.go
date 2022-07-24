@@ -7,9 +7,12 @@ func Task20() {
 
 	var result string = reverseWord(str)
 
-	PrintInputOutput(20.0, str, result)
+	PrintInputOutput(20.0, "", result, str)
 }
 
+// Чтобы разместить слова в обратном порядке
+// можно разбить строку на массив
+// и соеденить обратно в строку в обратном порядке
 func reverseWord(words string) string {
 	var splitWords []string = strings.Split(words, " ")
 	var result []string = make([]string, len(splitWords))

@@ -8,7 +8,7 @@ func Task24() {
 
 	var result float64 = p1.distance(p2)
 
-	PrintResult(24, result)
+	PrintResult(24, "Расстояние между точками", result)
 }
 
 // структура с 2 инкапсулированными параметрами

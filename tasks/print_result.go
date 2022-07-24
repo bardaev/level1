@@ -5,16 +5,19 @@ import (
 	"strconv"
 )
 
-func PrintResult(name int, result interface{}) {
-	fmt.Println("Task " + strconv.Itoa(name))
+func PrintResult(name float64, description string, result interface{}) {
+	fmt.Print("Task ")
+	fmt.Println(name)
+	fmt.Println("Description: " + description)
 	fmt.Print("output data: ")
 	fmt.Println(result)
 
-	EndOfTask()
+	endOfTask()
 }
 
-func PrintBeforeAfterResult(name int, before interface{}, after interface{}) {
+func PrintBeforeAfterResult(name int, description string, before interface{}, after interface{}) {
 	fmt.Println("Task " + strconv.Itoa(name))
+	fmt.Println("Description: " + description)
 
 	fmt.Print("Before: ")
 	fmt.Println(before)
@@ -22,22 +25,26 @@ func PrintBeforeAfterResult(name int, before interface{}, after interface{}) {
 	fmt.Print("After: ")
 	fmt.Println(after)
 
-	EndOfTask()
+	endOfTask()
 }
 
-func PrintInputOutput(name float64, inputData interface{}, outputData interface{}) {
+func PrintInputOutput(name float64, description string, outputData interface{}, inputData ...interface{}) {
 	fmt.Print("Task ")
 	fmt.Println(name)
 
-	fmt.Print("input data: ")
-	fmt.Println(inputData)
+	fmt.Println("Description: " + description)
+
+	for idx, val := range inputData {
+		fmt.Print("input data " + strconv.Itoa(idx+1) + ": ")
+		fmt.Println(val)
+	}
 
 	fmt.Print("output data: ")
 	fmt.Println(outputData)
 
-	EndOfTask()
+	endOfTask()
 }
 
-func EndOfTask() {
+func endOfTask() {
 	fmt.Println("-------------------------------------")
 }

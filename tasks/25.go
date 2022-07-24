@@ -14,9 +14,9 @@ func Task25() {
 	start2, end2 := sleep(dur2)
 	start3, end3 := sleep(dur3)
 
-	PrintInputOutput(25.1, strconv.FormatInt(dur1, 10)+" seconds", "Start: "+strconv.FormatInt(start1, 10)+", end: "+strconv.FormatInt(end1, 10))
-	PrintInputOutput(25.2, strconv.FormatInt(dur2, 10)+" seconds", "Start: "+strconv.FormatInt(start2, 10)+", end: "+strconv.FormatInt(end2, 10))
-	PrintInputOutput(25.3, strconv.FormatInt(dur3, 10)+" seconds", "Start: "+strconv.FormatInt(start3, 10)+", end: "+strconv.FormatInt(end3, 10))
+	PrintInputOutput(25.1, "", "Start: "+strconv.FormatInt(start1, 10)+", end: "+strconv.FormatInt(end1, 10), strconv.FormatInt(dur1, 10)+" seconds")
+	PrintInputOutput(25.2, "", "Start: "+strconv.FormatInt(start2, 10)+", end: "+strconv.FormatInt(end2, 10), strconv.FormatInt(dur2, 10)+" seconds")
+	PrintInputOutput(25.3, "", "Start: "+strconv.FormatInt(start3, 10)+", end: "+strconv.FormatInt(end3, 10), strconv.FormatInt(dur3, 10)+" seconds")
 }
 
 // Для реализации time.Sleep берем текущее время и добавляем количество секунд, которое будет означать конец функции sleep

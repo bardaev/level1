@@ -22,5 +22,5 @@ var elem int = 5
 func Task23() {
 	result := append(data[:elem], data[elem+1:]...)
 
-	PrintBeforeAfterResult(23, data, result)
+	PrintBeforeAfterResult(23, "Удаление элемента из слайса", data, result)
 }

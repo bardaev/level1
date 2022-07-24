@@ -10,8 +10,10 @@ func Task13() {
 
 	PrintInputOutput(
 		13.0,
+		"",
+		"a = "+strconv.Itoa(resA)+", b = "+strconv.Itoa(resB),
 		"a = "+strconv.Itoa(a)+", b = "+strconv.Itoa(b),
-		"a = "+strconv.Itoa(resA)+", b = "+strconv.Itoa(resB))
+	)
 }
 
 func replace(a int, b int) (int, int) {
