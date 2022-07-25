@@ -22,6 +22,8 @@ func Task19() {
 	PrintInputOutput(19.9, "Переворот строки без учета unicode (вариант 3)", reverseStrV3(str3), str3)
 }
 
+// Конвертируем строку в руну и в обратном порядке записываем в результирующий слайс рун
+// приводим к строке и возвращаем
 func reverseStrV1(str string) string {
 	s := []rune(str)
 	var result []rune = make([]rune, 0)
@@ -33,6 +35,7 @@ func reverseStrV1(str string) string {
 	return string(result)
 }
 
+// То же самое, только с пакетом utf8
 func reverseStrV2(str string) string {
 	var tmp []rune = make([]rune, 0)
 	var result []rune = make([]rune, 0)
@@ -50,6 +53,7 @@ func reverseStrV2(str string) string {
 	return string(result)
 }
 
+// Юникод не учитываем и получаем нечитаемые символы
 func reverseStrV3(str string) string {
 	var result string
 
