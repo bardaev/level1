@@ -6,6 +6,9 @@ import (
 
 func main() {
 	tasks.Task1()
+	tasks.Task2()
+	tasks.Task3()
+	tasks.Task6()
 	tasks.Task7()
 	tasks.Task11()
 	tasks.Task13()

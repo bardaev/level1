@@ -12,6 +12,7 @@ var dataMap map[int]int = make(map[int]int)
 
 func start() {
 	var ch chan bool = make(chan bool)
+	defer close(ch)
 
 	var mutex sync.Mutex
 
