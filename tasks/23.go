@@ -1,26 +1,43 @@
 package tasks
 
-var data []string = []string{
-	"one",
-	"two",
-	"three",
-	"four",
-	"five",
-	"six",
-	"seven",
-	"eight",
-	"nine",
-	"ten",
+func Task23() {
+	var data []string = []string{
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine",
+		"ten",
+	}
+
+	var elem int = 5
+
+	PrintInputOutput(23.1, "Удаление элемента из слайса с нарушением порядка (вариант 1)", removeItem1(data, elem), data)
+	PrintInputOutput(23.2, "Удаление элемента из слайса с сохранением порядка (вариант 2)", removeItem2(data, elem), data)
 }
 
-var elem int = 5
+// Меняем последний елемент с тем который хотим удалить
+// и возвращаем массив с длинной -1
+func removeItem1(arr []string, i int) []string {
+	var tmp []string = make([]string, len(arr))
+	copy(tmp, arr)
+	tmp[i] = tmp[len(tmp)-1]
+	return tmp[:len(tmp)-1]
+}
 
-// С помощью функции append соединяем 2 слайса
-// Используется оператор среза n:m
-// В первом аргументе передаем слайс от 0 до 4 элемента включительно
-// Во втором от 6 и до конца слайса
-func Task23() {
-	result := append(data[:elem], data[elem+1:]...)
+// Клеим 2 части массива без удаляемого элемента
+func removeItem2(arr []string, i int) []string {
+	var tmp []string = make([]string, len(arr))
+	copy(tmp, arr)
+	result := tmp[:i]
+	result = append(result, tmp[i+1:]...)
+	return result
 
-	PrintBeforeAfterResult(23, "Удаление элемента из слайса", data, result)
+	// result := arr[:i]
+	// result = append(result, arr[i+1:]...)
+	// return result
 }

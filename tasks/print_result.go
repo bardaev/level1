@@ -45,6 +45,17 @@ func PrintInputOutput(name float64, description string, outputData interface{}, 
 	endOfTask()
 }
 
+func PrintConcurrent(name float64, description string, cb func()) {
+	fmt.Print("Task ")
+	fmt.Println(name)
+
+	fmt.Println("Description: " + description)
+
+	cb()
+
+	endOfTask()
+}
+
 func endOfTask() {
 	fmt.Println("-------------------------------------")
 }
